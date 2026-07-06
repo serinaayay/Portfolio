@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> soph •ᴗ• | portfolio</title>
+  <meta name="description"
+    content="A minimal, elegant portfolio highlighting projects in digital design and software development, styled in refined navy blue and cream.">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div id="grid-bg"></div>
+  <section class="hero" id="hero" aria-labelledby="hero-title">
+
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title" id="hero-title">Hi! I'm Sophia Villamor.</h1>
+        <p class="hero-subtitle">
+          An aspiring front-end developer
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary" id="hero-btn-work">View My Work</a>
+          <a href="#contact" class="btn btn-outline" id="hero-btn-contact">Let's Connect</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section (Cream Theme) -->
+  <section class="section about" id="about" aria-labelledby="about-title">
+    <div class="container">
+      <div class="about-text reveal">
+        <div class="section-header">
+          <h2 class="section-title" id="about-title" style="text-align: center;"> technologies.</h2>
+          <div class="skills-container">
+            <br>
+            <ul class="skills-list" id="skills-list-group">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>React Native</li>
+              <li>Figma</li>
+              <li>SQL</li>
+              <li>Python</li>
+              <li>Git</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section (Cream Theme) -->
+  <section class="section projects" id="projects" aria-labelledby="projects-title">
+
+    <h2 class="section-title" id="projects-title" style="text-align: center">projects.</h2>
+    <br><br><br>
+
+    <div class="projects-grid">
+      <!-- Project 1 -->
+      <article class="project-card reveal">
+        <span class="project-card-meta">Mobile Application</span>
+        <h3 class="project-card-title">Pocket Salon</h3>
+        <p class="project-card-desc">
+          Pocket Salon is a mobile applicaation that detects hair type and damage through live image detection and
+          recommends
+          personalized hair products, routines, and remedies.
+        </p>
+        <a href="#" class="project-card-link" id="project-link-1">View Case Study</a>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project-card reveal">
+        <span class="project-card-meta">Website</span>
+        <h3 class="project-card-title">Portfolio</h3>
+        <p class="project-card-desc">
+          asdaddsasa
+        </p>
+        <a href="#" class="project-card-link" id="project-link-2">View Case Study</a>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project-card reveal">
+        <span class="project-card-meta">UI/UX Design</span>
+        <h3 class="project-card-title">The Coffee Journal</h3>
+        <p class="project-card-desc">
+          A dark-mode-first styling playground supporting design systems, allowing developers to test variables in
+          real-time.
+        </p>
+        <a href="#" class="project-card-link" id="project-link-3">View Case Study</a>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="project-card reveal">
+        <span class="project-card-meta">Power BI</span>
+        <h3 class="project-card-title">Philippine Marine Litter Monitoring Data Dashboard</h3>
+        <p class="project-card-desc">
+          A data-driven Power BI dashboard analyzing marine litter trends in the Philippines, visualizing key
+          indicators to support environmental monitoring and decision-making.
+        </p>
+        <a href="#" class="project-card-link" id="project-link-4">View Case Study</a>
+      </article>
+    </div>
+    </div>
+  </section>
+
+  <!-- Contact Section (Navy Theme) -->
+  <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="contact-info reveal">
+        <div class="section-header">
+          <h2 class="section-title" id="contact-title" style="text-align: center;">Let's create something together!
+          </h2>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+          <div class="container footer-content">
+            <ul class="social-links">
+              <li><a href="#" id="social-link-github">GitHub</a></li>
+              <li><a href="#" id="social-link-linkedin">LinkedIn</a></li>
+            </ul>
+          </div>
+        </footer>
+
+        <!-- JavaScript for Scroll & Menu Effects -->
+        <script>
+
+          // 3. Scroll Reveal Animation using Intersection Observer
+          const revealElements = document.querySelectorAll('.reveal');
+
+          const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+              }
+            });
+          }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+          });
+
+          revealElements.forEach(element => {
+            revealObserver.observe(element);
+          });
+
+          window.addEventListener('mousemove', (e) => {
+            document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
+            document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
+          });
+
+        </script>
+      </div>
+  </section>
+  <script src="animations.js"></script>
+</body>
+
+</html>
