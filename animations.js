@@ -14,7 +14,7 @@ document.addEventListener('mousemove', (e) => {
 
 // Animation loop for fluid movement
 function animate() {
-    const speed = 0.05;
+    const speed = 0.03;
 
     gradientX += (mouseX - gradientX) * speed;
     gradientY += (mouseY - gradientY) * speed;
